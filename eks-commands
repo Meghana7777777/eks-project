@@ -1,0 +1,25 @@
+Create EKS-cluster using aws-cli:
+--------------------------------
+
+*aws ecr get-login-password --region <region> | docker login --username AWS --password-stdin<aws-account-id>.dkr.ecr.<region>.amazonaws.com
+
+*aws ecr create-repository 
+--repository-name <name-repository> 
+--image-scanning-configuration scanOnPush=true 
+--region <region>
+
+*sudo docker images
+
+*docker tag <image-name:version> <repository uri>
+
+*docker push <taged image-name>
+
+*aws ecr batch-delete-image 
+--repository-name <name-repository> 
+--image-ids imageTag=<version>
+--region <region>
+
+* aws ecr delete-repository 
+--repository-name <name-repository> 
+--force 
+--region <region>
