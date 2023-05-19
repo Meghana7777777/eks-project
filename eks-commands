@@ -23,3 +23,30 @@ Create EKS-cluster using aws-cli:
 --repository-name <name-repository> 
 --force 
 --region <region>
+
+Commands:
+==========
+
+   kubectl apply -f deploy.pod.yaml
+   kubectl get rs
+   kubectl get pods
+   kubectl scale deployment deploy --replicas=5
+   kubectl get pods
+   kubectl set image deployment.app/deploy nginx=nginx:1.24.0
+   kubectl get pods
+   watch kubectl get pods
+   kubectl set image deployment.app/deploy nginx=nginx:1.23
+   watch kubectl get pods
+   kubectl rollout status deployment deploy
+   watch kubectl get pods
+   kubectl rollout history deployment deploy
+   kubectl rollout history deployment deploy --revision=3
+   kubectl rollout undo deployment deploy
+   kubectl rollout history deployment deploy --revision=3
+   kubectl rollout history deployment deploy
+   kubectl get pods
+   kubectl rollout status deployment deploy
+   kubectl describe deployment deploy
+   kubectl rollout undo deployment deploy
+   kubectl describe deployment deploy
+   kubectl get pods
